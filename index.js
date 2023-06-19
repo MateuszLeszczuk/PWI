@@ -8,12 +8,17 @@ app.set('view engine', 'hbs')
 
 app.use(express.static(__dirname + '/public'));
 
+
+
 app.get('/', (req, res) => {
     res.render('index')
+})
 
-
+app.get('/en', (req, res) => {
+    res.render('en')
 })
 
 
 
-app.listen(PORT, 'Server connection is failed on Port:' + PORT)
+
+app.listen(PORT, () => console.log(`Server is working on port:${PORT}`))
